@@ -1,0 +1,30 @@
+<h3>Edit Product Information</h3>
+
+ <form action="/products/<%= @product.id %>" method="post" class="form-horizontal"> 
+	<div class="control-group">
+		<input type="hidden" name="_method" value="put">
+	<!--  hidden input is necessary! -->
+		<label class="control-label">Product Name</label>
+		<div class='controls'>
+			<input type="text" value="<%= @product.name %>" name="product[name]">	
+		</div>
+	</div>
+	<div class="control-group">	
+		<label class="control-label">Product Description</label>
+		<div class="controls">
+			<textarea  rows="4" cols="50" name="product[description]"><%= @product.description %></textarea>
+		</div>
+	</div>
+	<div class="control-group">	
+		<label class="control-label">Price</label>
+		<div class="controls">
+			<input type="text" value="<%= @product.pricing %>" name="product[pricing]">
+			<br>
+			<br>
+			<input type="submit" value="Save" class="btn"> &#160;&#160;<a href="/products">Cancel</a>
+		</div>
+	</div>
+</form>
+
+
+

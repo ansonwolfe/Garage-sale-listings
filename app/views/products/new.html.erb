@@ -1,0 +1,30 @@
+<h2>Create a new product</h2>
+
+<form action="/products" method="post" class="form-horizontal">
+	<div class="control-group">
+		<label class="control-label">
+		Product Name:
+		</label>
+		<div class="controls">
+			<input type="text" name="product[name]" placeholder="product name">
+		</div>
+	</div>		
+	<div class="control-group">
+		<label class="control-label">Description: </label>
+		<div class="controls">
+			<textarea rows="4" cols="50" name="product[description]"></textarea>
+		</div>
+	</div>
+	<div class="control-group">	
+		<label class="control-label">Price:</label>
+		<div class="controls">
+			<input type="text" name="product[pricing]" placeholder="price">
+		<br>
+		<br>
+			<input type="submit" value="Create new product" class="btn">
+		</div>
+	</div>
+</form>
+
+
+<p><a href="/products">Return to Index</a></p>

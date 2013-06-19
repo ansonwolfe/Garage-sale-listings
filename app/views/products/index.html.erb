@@ -1,0 +1,32 @@
+<h1>Index of all Products</h1>
+<p><a href="products/new">Create a new product</a></p>
+
+<table class="table table-bordered table-hover table-condensed">
+	<thead>
+		<tr>
+			<th>Product ID</th>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Price</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+<% @products.each do |product| %>
+		<tr>
+			<td><%= product.id %></td>
+			<td><a href="products/<%= product.id%>"><%= product.name %></a></td>
+			<td><%= product.description %></td>
+			<td><%= product.pricing %></td>
+			<td><a href="products/<%= product.id%>/edit">Edit</a></td>
+			<td>	
+				<form action="/products/<%= product.id %>" method="post">
+					<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+					<input type="submit" value="delete" class="btn btn-danger">
+					<input type="hidden" name="_method" value="delete">
+				</form>
+			</td>
+		</tr>	
+<% end -%>			
+	</tbody>
+</table>
