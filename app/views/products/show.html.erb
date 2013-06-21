@@ -4,6 +4,9 @@
 	Product name:  <%= @product.name %>
 </p>
 <p>
+	Category: <%= @product.category.name %>
+</p>
+<p>
 	Description: <br>
 	<%= @product.description %>
 </p>
@@ -11,6 +14,24 @@
 	Price: <%= @product.pricing %>
 </p>
 <a href="<%= @product.id %>/edit">Edit</a>
+<h6>Comments:</h6>
+<div id="comments">
+<% @product_comments.each do |product_comment| %>
+	<blockquote>
+		<%= product_comment.content %>
+	</blockquote>
+<% end %>	
+</div>	
+
+
+<form action="/comments" method="post">
+	<label>Add a comment:</label>
+	<textarea name="comment[content]"></textarea>
+	<br>
+	<input type="hidden" name="id" value="<%= @product.id %>">
+	<input type="submit" value="post comment" class="btn">
+</form>
+
 <p><a href="/products">Index</a></p>
 
 

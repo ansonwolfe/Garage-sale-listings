@@ -18,7 +18,8 @@ class ProductsController < ApplicationController
 	end
 
 	def show
-		@product = Product.find(params[:id])	
+		@product = Product.find(params[:id])
+		@product_comments = @product.comments.order("created_at DESC")	
 	end
 
 	def edit
@@ -30,7 +31,7 @@ class ProductsController < ApplicationController
 		if @product.update_attributes(params[:product])
 			redirect_to @product
 		else 
-			render edit page	
+			render :edit
 		end	
 	end
 

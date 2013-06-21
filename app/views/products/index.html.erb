@@ -1,4 +1,4 @@
-<h1>Index of all Products</h1>
+<h1>Internet-Assisted Garage Sale</h1>
 <p><a href="products/new">Create a new product</a></p>
 
 <table class="table table-bordered table-hover table-condensed">
@@ -7,6 +7,7 @@
 			<th>Product ID</th>
 			<th>Name</th>
 			<th>Description</th>
+			<th>Category</th>
 			<th>Price</th>
 			<th>Action</th>
 		</tr>
@@ -16,7 +17,8 @@
 		<tr>
 			<td><%= product.id %></td>
 			<td><a href="products/<%= product.id%>"><%= product.name %></a></td>
-			<td><%= product.description %></td>
+			<td><a href="products/<%= product.id%>"><%= product.description %></td>
+			<td><%= product.category.name %></td>
 			<td><%= product.pricing %></td>
 			<td><a href="products/<%= product.id%>/edit">Edit</a></td>
 			<td>	
