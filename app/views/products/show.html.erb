@@ -1,4 +1,7 @@
 <h3>Product Information</h3>
+User id: <%= session[:user_id] %><br>
+
+
 <a href="/products">Back Home   </a> 
 <p>
 	Product name:  <%= @product.name %>
@@ -13,24 +16,27 @@
 <p>
 	Price: <%= @product.pricing %>
 </p>
-<a href="<%= @product.id %>/edit">Edit</a>
+<!-- 	<%= link_to "Edit product info", edit_product_path(@product.id), :class => "btn btn-mini" %> -->
+<a href="<%= @product.id %>/edit">Edit Product Info</a>
 <h6>Comments:</h6>
 <div id="comments">
 <% @product_comments.each do |product_comment| %>
 	<blockquote>
 		<%= product_comment.content %>
+		<small>Posted by: <%= product_comment.author %> on <%= product_comment.created_at %></small>
 	</blockquote>
 <% end %>	
 </div>	
-
-
 <form action="/comments" method="post">
 	<label>Add a comment:</label>
+	<input type="hidden" name="comment[author]" value="<%= session[:user_id] %> ">
+	<br>
 	<textarea name="comment[content]"></textarea>
 	<br>
 	<input type="hidden" name="id" value="<%= @product.id %>">
 	<input type="submit" value="post comment" class="btn">
 </form>
+
 
 <p><a href="/products">Index</a></p>
 

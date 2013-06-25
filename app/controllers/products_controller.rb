@@ -19,7 +19,8 @@ class ProductsController < ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
-		@product_comments = @product.comments.order("created_at DESC")	
+		@product_comments = @product.comments.order("created_at DESC")
+
 	end
 
 	def edit

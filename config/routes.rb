@@ -1,4 +1,19 @@
 Intermediate1::Application.routes.draw do
+  # get "sessions/new"
+
+  # get "sessions/create"
+
+  # get "sessions/destroy"
+
+  # get "users/new"
+
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+
+  match "/signup",  :to => 'users#new'
+  match "/signin",  :to => 'sessions#new'
+  match "/signout", :to => 'sessions#destroy'
+
   resources :products 
   resources :comments
   # The priority is based upon order of creation:

@@ -1,0 +1,17 @@
+<fieldset>
+	
+<legend>Comments for products</legend>
+
+<% @comments.each do |comment| %>
+	<!-- show the product the comments are associated with -->
+	<strong>Product name: <%= comment.product.name %></strong>
+	<small>ID #: <%= comment.product.id %></small>
+	<blockquote>
+	<%= comment.content %><br>
+	<small>
+	<%= comment.created_at %>
+	</small>
+	</blockquote>
+		
+<% end %>	
+</fieldset>

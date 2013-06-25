@@ -3,7 +3,7 @@
 
 <!-- simple form sucks!  -->
 <%= simple_form_for @product do |f| %>
-	<%= f.input :name, label: '(simple form)Product name' %>
+	<%= f.input :name, label: 'Product name' %>
 	<%= f.association :category, :input_html => {:class => "span4"}, label: "Category" %>
 	<%= f.input :description, :input_html => {:rows => 5, :class => "span4" } %>
 	<%= f.input :pricing, label: 'Price' %>
