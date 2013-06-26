@@ -3,6 +3,7 @@ module SessionsHelper
   def sign_in(user)
   	# when created new user, also set new session
     session[:user_id] = user.id
+    session[:user_name] = user.name
     self.current_user = user
   end
   

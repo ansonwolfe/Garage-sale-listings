@@ -1,7 +1,13 @@
 <h1>Internet-Assisted Garage Sale</h1>
-<h5>Logged in as:  ID #<%= session[:user_id] %> 
+<!-- check if a current user/session is logged in, show the user ID and name -->
+<% if current_user %>
+	<h5>Logged in as:  ID #<%= session[:user_id] %> 
+	<br>
+		Name: <%= current_user.name %>	
+	</h5>
+<% end %>	
 
-
+<%= Product.count %> total products
 <p><a href="products/new">Create a new product</a></p>
 
 <table class="table table-bordered table-hover table-condensed">
@@ -16,6 +22,7 @@
 		</tr>
 	</thead>
 	<tbody>
+		<!-- show all products -->
 <% @products.each do |product| %>
 		<tr>
 			<td><%= product.id %></td>
@@ -25,6 +32,7 @@
 			<td><%= product.pricing %></td>
 			<td><a href="products/<%= product.id%>/edit">Edit</a></td>
 			<td>	
+				<!-- delete button -->
 				<form action="/products/<%= product.id %>" method="post">
 					<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 					<input type="submit" value="delete" class="btn btn-danger">
@@ -35,3 +43,9 @@
 <% end -%>			
 	</tbody>
 </table>
+<!-- if user is logged in, show logout, else show sign in if not logged -->
+<% if current_user %>
+	<p><a href="/signout">Logout</a></p>
+<% else %>
+	<p><a href="/signin">Log In</a></p>
+<% end %>		

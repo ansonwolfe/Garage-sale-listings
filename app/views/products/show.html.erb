@@ -1,5 +1,11 @@
 <h3>Product Information</h3>
-User id: <%= session[:user_id] %><br>
+<!-- check if there is a current user/session logged in, if logged, show the user ID and name -->
+<% if current_user %>
+	<h5>Logged in as:  ID #<%= session[:user_id] %> 
+	<br>
+		Name: <%= current_user.name %>		
+	</h5>
+<% end %>
 
 
 <a href="/products">Back Home   </a> 
@@ -20,22 +26,37 @@ User id: <%= session[:user_id] %><br>
 <a href="<%= @product.id %>/edit">Edit Product Info</a>
 <h6>Comments:</h6>
 <div id="comments">
+	<!-- display all comments for product as stored in controller -->
 <% @product_comments.each do |product_comment| %>
 	<blockquote>
 		<%= product_comment.content %>
-		<small>Posted by: <%= product_comment.author %> on <%= product_comment.created_at %></small>
+		<!-- check if the comment's author is registered or not. Display 'Anonymous' for guests -->
+		<small>Posted by: <% if product_comment.author == '0'%>
+			Anonymous
+		<% else %>	
+			<%= User.find_by_id(product_comment.author).name %>
+		<% end %>
+			 on <%= product_comment.created_at %></small>
 	</blockquote>
 <% end %>	
 </div>	
 <form action="/comments" method="post">
 	<label>Add a comment:</label>
-	<input type="hidden" name="comment[author]" value="<%= session[:user_id] %> ">
+	<!-- check if user is logged in, user user ID for author, else put '0' for guests -->
+	<% if current_user %>
+		<input type="hidden" name="comment[author]" value="<%= session[:user_id] %> ">
+	<% else  %>
+		<input type="hidden" name="comment[author]" value="0">
+	<% end %>
 	<br>
 	<textarea name="comment[content]"></textarea>
 	<br>
+	<!-- remember to always add authenticity_token to forms unless using simple forms -->
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 	<input type="hidden" name="id" value="<%= @product.id %>">
 	<input type="submit" value="post comment" class="btn">
 </form>
+
 
 
 <p><a href="/products">Index</a></p>
