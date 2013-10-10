@@ -4,7 +4,7 @@
 
 <% @comments.each do |comment| %>
 	<!-- show the product the comments are associated with -->
-	<strong>Product name: <%= comment.product.name %></strong>
+	<strong>Product name: <a href="/products/<%= comment.product.id %>"><%= comment.product.name %></a></strong>
 	<small>ID #: <%= comment.product.id %></small>
 	<blockquote>
 	<%= comment.content %><br>

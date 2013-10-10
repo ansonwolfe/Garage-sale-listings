@@ -9,19 +9,27 @@
 
 
 <a href="/products">Back Home   </a> 
+
 <p>
-	Product name:  <%= @product.name %>
+	<%= image_tag @product.photo.url(:large) %>
 </p>
 <p>
-	Category: <%= @product.category.name %>
+	<h2>Product name:  <%= @product.name %> 	<small><%= @product.category.name %></small></h2>
 </p>
 <p>
-	Description: <br>
+
+</p>
+<p>
+	<h5>
+		
 	<%= @product.description %>
+	</h5>
 </p>
 <p>
 	Price: <%= @product.pricing %>
 </p>
+
+
 <!-- 	<%= link_to "Edit product info", edit_product_path(@product.id), :class => "btn btn-mini" %> -->
 <a href="<%= @product.id %>/edit">Edit Product Info</a>
 <h6>Comments:</h6>

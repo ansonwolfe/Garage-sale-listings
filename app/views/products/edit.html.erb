@@ -36,12 +36,19 @@ ruby end
 	</div>
 </form> -->
 
-<%= simple_form_for @product do |f| %>
+<%= simple_form_for @product, :html => { :multipart => true } do |f| %>
 	<%= f.input :name, label: 'Product name' %>
 	<%= f.association :category, :input_html => {:class => "span4"}, label: "Category" %>
 	<%= f.input :description, :input_html => {:rows => 5, :class => "span4" } %>
 	<%= f.input :pricing, label: 'Price' %>
-	<%= f.button :submit %>
+	<p>
+    <%= image_tag @product.photo.url(:small) %>
+	</p>
+	<p>
+    Change image: <%= f.file_field :photo, :class => "btn" %>
+	</p>
+	<%= f.submit class: 'btn btn-primary' %>
+<!-- 	<%= f.button :submit %> -->
 <% end %>
 <a href="/products">Cancel</a>
 	

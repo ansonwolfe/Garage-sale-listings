@@ -25,6 +25,7 @@
 		<!-- show all products -->
 <% @products.each do |product| %>
 		<tr>
+<!-- 			<td><%= image_tag product.photo.url(:thumb) %></td> -->
 			<td><%= product.id %></td>
 			<td><a href="products/<%= product.id%>"><%= product.name %></a></td>
 			<td><a href="products/<%= product.id%>"><%= product.description %></td>
