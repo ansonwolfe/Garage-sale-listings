@@ -1,0 +1,25 @@
+Features List to hack out:
+- user profile
+	show user contact info
+	edit page
+	show items available
+
+- home page 
+	show all items available
+	image thumbnails
+	banner? 
+
+- Twilio integration 
+	send text messages
+
+- Email me
+	
+- mark something as sold / spoken for
+
+- messaging platform... 
+	change existing messages / comments to messages			
+
+
+
+
+

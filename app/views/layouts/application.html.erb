@@ -7,8 +7,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <a class="brand" href="/">Middleman</a>
+      <ul class="nav">
+        <li class="active"><a href="/"> Available</a></li>
+      </ul>
+
+      <p class="navbar-text pull-right">
+<!-- if user is logged in, show logout, else show sign in if not logged -->
+      <% if current_user %>
+        <a href="/signout">Logout</a>
+      <% else %>
+        New user? <a href="/signup">Register</a>  |  <a href="/signin">Log In</a>
+      <% end %> 
+
+        <!-- logged_in_user@email.com | <a href="log_out_link_here">Log Out</a> -->
+
+      </p>
+
+    </div>
+  </div>
+<!-- begin page -->
 	<div class="container">
+
+<!-- insert other details -->
 		<%= yield %>
-	</div>
+	
+  </div>
 </body>
 </html>
+
+
+
