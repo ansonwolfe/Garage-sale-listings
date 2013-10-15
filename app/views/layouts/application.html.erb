@@ -9,14 +9,19 @@
 <body>
 	<div class="navbar navbar-inverse">
     <div class="navbar-inner">
-      <a class="brand" href="/">Middleman</a>
+      <a class="brand" href="<%= root_path %>">Middleman</a>
+
       <ul class="nav">
         <li class="active"><a href="/"> Available</a></li>
       </ul>
+      
+      
 
       <p class="navbar-text pull-right">
+
 <!-- if user is logged in, show logout, else show sign in if not logged -->
       <% if current_user %>
+        Welcome <a href="/users/<%= current_user.id %>"><%= current_user.name %> </a>  |  
         <a href="/signout">Logout</a>
       <% else %>
         New user? <a href="/signup">Register</a>  |  <a href="/signin">Log In</a>
