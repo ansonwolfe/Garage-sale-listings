@@ -1,0 +1,30 @@
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+  <table class="table table-bordered table-hover table-condensed">
+	<thead>
+		<tr>
+			<th>Category ID</th>
+			<th>Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- show all  -->
+<% @categories.each do |category| %>
+		<tr>
+			<td><%= category.id %></td>
+			<td><a href="categories/<%= category.id%>"><%= category.name %></a></td>
+			<td><a href="categories/<%= category.id%>/edit">Edit</a></td>
+			<td>	
+				<!-- delete button -->
+				<form action="/categories/<%= category.id %>" method="post">
+					<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+					<input type="submit" value="delete" class="btn btn-danger">
+					<input type="hidden" name="_method" value="delete">
+				</form>
+			</td>
+		</tr>	
+<% end -%>			
+	</tbody>
+</table>
