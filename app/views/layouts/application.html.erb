@@ -12,7 +12,12 @@
       <a class="brand" href="<%= root_path %>">Middleman</a>
 
       <ul class="nav">
-        <li class="active"><a href="/"> Available</a></li>
+        <li class="active">
+          <%= link_to "Products", products_path %> 
+        </li>  
+        <li class="active">
+          <%= link_to "Categories", categories_path %>
+        </li>
       </ul>
       
       

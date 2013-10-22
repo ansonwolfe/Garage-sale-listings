@@ -1,0 +1,9 @@
+<h2>Create a new category</h2>
+
+
+<%= simple_form_for @category do |f| %>
+	<%= f.input :name, label: 'Category name' %>
+	<%= f.submit class: 'btn btn-primary' %>
+<!-- 	<%= f.button :submit %> -->
+<% end %>
+<p><a href="/categories">Return to Index</a></p>
