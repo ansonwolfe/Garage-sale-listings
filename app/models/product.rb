@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   # accepts_nested_attributes_for :photo, :allow_destroy => true
 
-  validates :category, :name, :pricing, :description, :presence => true
+  validates :category, :name, :pricing, :description, :photo, :presence => true
 
 
 	has_attached_file :photo, :styles => { :thumb => "100x100#>", 
