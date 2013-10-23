@@ -5,7 +5,14 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
 gem 'pg'
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 gem 'hirb'
 gem 'simple_form'
 gem 'rails-footnotes', '>= 3.7.9', :group => :development

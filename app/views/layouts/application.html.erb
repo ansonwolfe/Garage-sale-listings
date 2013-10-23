@@ -15,9 +15,11 @@
         <li class="active">
           <%= link_to "Products", products_path %> 
         </li>  
-        <li class="active">
-          <%= link_to "Categories", categories_path %>
-        </li>
+        <% if current_user && current_user.id == 1 %>
+          <li class="active">
+            <%= link_to "Categories", categories_path %>
+          </li>
+        <% end %>  
       </ul>
       
       
