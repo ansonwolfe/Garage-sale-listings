@@ -30,6 +30,8 @@ group :assets do
   gem 'thin'
 end
 
+ruby '1.9.3'
+
 gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 
 gem 'jquery-rails'

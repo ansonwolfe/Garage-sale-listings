@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131002061446) do
+ActiveRecord::Schema.define(:version => 20131101223321) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -50,7 +50,10 @@ ActiveRecord::Schema.define(:version => 20131002061446) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "products", ["user_id"], :name => "index_products_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

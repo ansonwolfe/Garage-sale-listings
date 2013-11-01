@@ -17,7 +17,7 @@
 	<h2>Product name:  <%= @product.name %> 	<small><%= @product.category.name %></small></h2>
 </p>
 <p>
-
+	<h4><small>Offered by:<a href="/users/<%= User.find_by_id(@product.user_id).id %>"> <%= User.find_by_id(@product.user_id).name %></a></small></h4>
 </p>
 <p>
 	<h5>
