@@ -30,6 +30,8 @@ group :assets do
   gem 'thin'
 end
 
+gem 'bootstrap-sass', '~> 3.0.0.0.rc'
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password

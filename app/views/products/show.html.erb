@@ -49,7 +49,7 @@
 <% end %>	
 </div>	
 <form action="/comments" method="post">
-	<label>Add a comment:</label>
+	<h5>Interested in this? Leave a note:</h5>
 	<!-- check if user is logged in, user user ID for author, else put '0' for guests -->
 	<% if current_user %>
 		<input type="hidden" name="comment[author]" value="<%= session[:user_id] %> ">
@@ -62,7 +62,7 @@
 	<!-- remember to always add authenticity_token to forms unless using simple forms -->
     <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 	<input type="hidden" name="id" value="<%= @product.id %>">
-	<input type="submit" value="post comment" class="btn">
+	<input type="submit" value="Drop a note" class="btn">
 </form>
 
 

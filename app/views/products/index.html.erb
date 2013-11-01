@@ -33,13 +33,15 @@
 			<td><%= product.pricing %></td>
 			<td><a href="products/<%= product.id%>/edit">Edit</a></td>
 			<td>	
+				<!-- simpler delete link -->
+				<%= button_to "delete", product, :method=>:delete, :class=>:btn  %>
 				<!-- delete button -->
-				<form action="/products/<%= product.id %>" method="post">
+<!-- 				<form action="/products/<%= product.id %>" method="post">
 					<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 					<input type="submit" value="delete" class="btn btn-danger">
 					<input type="hidden" name="_method" value="delete">
 				</form>
-			</td>
+ -->			</td>
 		</tr>	
 <% end -%>			
 	</tbody>

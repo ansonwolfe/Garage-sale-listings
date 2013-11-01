@@ -1,0 +1,17 @@
+---
+rails.png: rails.png
+rails/index.png: rails.png
+application.js: application.js
+application/index.js: application.js
+application.css: application.css
+application/index.css: application.css
+jquery.min.map: jquery.min.map
+jquery/index.min.map: jquery.min.map
+bootstrap/glyphicons-halflings-regular.eot: bootstrap/glyphicons-halflings-regular.eot
+bootstrap/glyphicons-halflings-regular/index.eot: bootstrap/glyphicons-halflings-regular.eot
+bootstrap/glyphicons-halflings-regular.svg: bootstrap/glyphicons-halflings-regular.svg
+bootstrap/glyphicons-halflings-regular/index.svg: bootstrap/glyphicons-halflings-regular.svg
+bootstrap/glyphicons-halflings-regular.ttf: bootstrap/glyphicons-halflings-regular.ttf
+bootstrap/glyphicons-halflings-regular/index.ttf: bootstrap/glyphicons-halflings-regular.ttf
+bootstrap/glyphicons-halflings-regular.woff: bootstrap/glyphicons-halflings-regular.woff
+bootstrap/glyphicons-halflings-regular/index.woff: bootstrap/glyphicons-halflings-regular.woff
