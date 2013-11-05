@@ -12,8 +12,14 @@ class Product < ActiveRecord::Base
   										                   :small => "300x300>",
   										                   :large => "1000x1000>"
   										                 },
-	                  :url  => "/assets/products/:id/:style/:basename.:extension",
-	                  :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+  # adding these to store in AWS
+                  :storage => :s3, 
+                  :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                  :path => "garage-sale-net/:attachment/:style/:id.:extension"
+
+  # switching these out for Amazon Web Services s3
+	                  # :url  => "/assets/products/:id/:style/:basename.:extension",
+	                  # :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
 
 	validates_attachment_presence :photo
 	validates_attachment_size :photo, :less_than => 5.megabytes
