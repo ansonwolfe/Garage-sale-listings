@@ -14,7 +14,7 @@ class Product < ActiveRecord::Base
   										                 },
   # adding these to store in AWS
                   :storage => :s3, 
-                  :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                  :s3_credentials => "#{Rails.root}/config/s3.yml",
                   :path => "garage-sale-net/:attachment/:style/:id.:extension"
 
   # switching these out for Amazon Web Services s3
