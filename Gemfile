@@ -36,6 +36,10 @@ gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 
 gem 'jquery-rails'
 
+#required for AWS
+
+gem 'aws-sdk', '1.11.1'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
