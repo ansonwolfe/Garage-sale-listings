@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   validates :category, :name, :pricing, :description, :photo, :presence => true
 
 
-	has_attached_file :photo, :styles => { :thumb => "50x50#>", 
+	has_attached_file :photo, :styles => { :thumb => "50x50>", 
   										                   :small => "300x300>",
   										                   :large => "1000x1000>"
   										                 },
