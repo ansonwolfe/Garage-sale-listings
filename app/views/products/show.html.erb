@@ -11,7 +11,7 @@
 <a href="/products">Back Home   </a> 
 
 <p>
-	<%= image_tag @product.photo.url(:large) %>
+	<%= image_tag @product.photo.url(:small) %>
 </p>
 <p>
 	<h2>Product name:  <%= @product.name %> 	<small><%= @product.category.name %></small></h2>
@@ -49,7 +49,7 @@
 <% end %>	
 </div>	
 <form action="/comments" method="post">
-	<h5>Interested in this? Leave a note:</h5>
+	<h5>Have a question?</h5>
 	<!-- check if user is logged in, user user ID for author, else put '0' for guests -->
 	<% if current_user %>
 		<input type="hidden" name="comment[author]" value="<%= session[:user_id] %> ">
