@@ -1,0 +1,9 @@
+development:
+  bucket: garage-sale-net
+  access_key_id: AKIAIPBK5MMQWH566DMQ
+  secret_access_key: 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
+ 
+production:
+  bucket: garage-sale-net
+  access_key_id: AKIAIPBK5MMQWH566DMQ
+  secret_access_key: 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

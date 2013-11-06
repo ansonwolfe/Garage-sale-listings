@@ -6,7 +6,7 @@
 
 /public/assets
 /tmp/cache
-/config/s3.yml
+
 
 # Ignore bundler config
 /.bundle
