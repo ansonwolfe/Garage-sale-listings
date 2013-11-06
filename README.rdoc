@@ -1,3 +1,6 @@
 == Fun with Rails and Garage Sale
 
 A little database to post things for sale - a la Craigslist.
+
+
+Link to site: http://garage-sale-net.herokuapp.com/
