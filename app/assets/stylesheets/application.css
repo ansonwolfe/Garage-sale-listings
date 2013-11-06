@@ -13,6 +13,11 @@
  */
 @import "bootstrap";
 
+body
+{
+  background-image:url('http://www.hdwallpapersplus.com/wp-content/uploads/2013/05/background-5-point.jpg');
+  background-color:#cccccc;
+}
 #bg {
   background-image:url('http://www.hdwallpapersplus.com/wp-content/uploads/2013/05/background-5-point.jpg');
   position: fixed; 

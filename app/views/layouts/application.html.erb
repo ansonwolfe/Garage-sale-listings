@@ -7,7 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="navbar navbar-inverse">
+  <div id="bg">  
+	<div id="navigation" class="navbar navbar-inverse">
     <div class="navbar-inner">
       <a class="brand" href="<%= root_path %>">Private Listings</a>
       <ul class="nav">
@@ -32,8 +33,8 @@
     </div>
   </div>
 <!-- begin page -->
-  <div id="bg">
-  	<div class="container">
+
+  	<div id = "content-wrap" class="container">
 		  <%= yield %>
     </div>
   </div>
