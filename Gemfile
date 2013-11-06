@@ -9,9 +9,10 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'pg'
 gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 gem 'jquery-rails'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.5.7'
 gem 'hirb'
 gem 'simple_form'
+
 
 group :production do
   gem 'pg'
