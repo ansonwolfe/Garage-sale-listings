@@ -1,3 +1,10 @@
+<script type="text/javascript">
+  mixpanel.track("Product details visited",{
+  	"id": "<%= @product.id %>"
+  });
+</script>
+
+
 <h3>Product Information</h3>
 <!-- check if there is a current user/session logged in, if logged, show the user ID and name -->
 <% if current_user %>
